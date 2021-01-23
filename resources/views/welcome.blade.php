@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@session('content')
+@section('content')
 
 @endsection
 
