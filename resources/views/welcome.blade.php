@@ -1,3 +1,9 @@
+@extends('layouts.app')
+
+@session('content')
+
+@endsection
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
