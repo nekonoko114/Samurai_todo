@@ -13,13 +13,13 @@ class CreateToDosTable extends Migration
      */
     public function up()
     {
-        Schema::create('to_dos', function (Blueprint $table) {
+        Schema::create('todos', function (Blueprint $table) {
             $table->bigIncrements('id');
-                $table->text('content');
-                $tabls->integer('user_id');
-                $tabls->integer('goal_id');
-                $tabls->integer('position');
-                $tabls->bollean('done')->default(false);
+            $table->text('content');
+            $tabls->integer('user_id');
+            $tabls->integer('goal_id');
+            $tabls->integer('position');
+            $tabls->bollean('done')->default(false);
             $table->timestamps();
         });
     }

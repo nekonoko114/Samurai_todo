@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ToDo extends Model
 {
-    use \Rutorika\Sortable\SortableTrait;
+    use\Rutorika\Sortable\SortableTrait;
 
     public function user()
     {
