@@ -11,10 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index');
+
+Route::get('/home','HomeController@index')->name('home');
+
+Route::resource('goals','GoalController');
+
+Route::resoruce('goals.todos','TodoController');
+
+Route::post('/goals/{goal}/todos/{todo}/sort','TOdoController@sort');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
