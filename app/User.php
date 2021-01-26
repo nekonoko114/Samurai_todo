@@ -46,4 +46,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\ToDo');
     }
+
+    public function tags()
+    {
+        return $this->hasMany('App\Tag');
+    }
 }
