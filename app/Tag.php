@@ -11,7 +11,7 @@ class Tag extends Model
         return $this->belongsTo('App\user');
     }
 
-    public function todos89
+    public function todos89()
     {
         return $this->belongsToMany('App\Todo');
     }
