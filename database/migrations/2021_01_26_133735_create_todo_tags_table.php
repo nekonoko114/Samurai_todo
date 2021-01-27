@@ -15,7 +15,7 @@ class CreateTodoTagsTable extends Migration
     {
         Schema::create('tag_todo', function (Blueprint $table) {
             $table->bigIncrements('id');
-                $table->integer('todo');
+                $table->integer('todo_id');
                 $table->integer('tag_id');
             $table->timestamps();
         });
@@ -28,7 +28,7 @@ class CreateTodoTagsTable extends Migration
      */
     public function down()
     {
-        Schema:table('todo_tags',function(Blueprint $table){
+        Schema::table('todo_tags',function(Blueprint $table){
             $table->dropColmun('todo_id');
             $table->dropColmun('tag_id');
         });

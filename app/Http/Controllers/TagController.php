@@ -15,7 +15,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        $user = Auth::uset();
+        $user = Auth::user();
         $tags = $user->tags;
         return response()->json($tags);
     }
@@ -75,7 +75,7 @@ class TagController extends Controller
         $tag->user_id = Auth::id();
         $tag->save();
 
-        $uset = Auth::user();
+        $user = Auth::user();
 
         $tags  = $user->tags;
         return response()->json($tags);

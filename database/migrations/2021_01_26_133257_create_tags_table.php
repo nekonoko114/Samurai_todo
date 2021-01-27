@@ -28,7 +28,7 @@ class CreateTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tags',function(Blueprint $table) {
+        Schema::table('tags',function(Blueprint $table) {
             $table->dropColumn('title');
             $table->dropColumm('user_id');
         });
