@@ -13,6 +13,7 @@ class CreateToDosTable extends Migration
      */
     public function up()
     {
+        dd($tabls);
         Schema::create('todos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('content');

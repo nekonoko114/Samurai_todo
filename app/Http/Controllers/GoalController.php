@@ -18,14 +18,10 @@ class GoalController extends Controller
         $goals = Auth::user()->goals;
 
         return response()->json($goals);
+        
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -45,21 +41,9 @@ class GoalController extends Controller
         return response()->json($goals);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Goal  $goal
-     * @return \Illuminate\Http\Response
-     */
-    
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Goal  $goal
-     * @return \Illuminate\Http\Response
-     */
-    
+
+ 
 
     /**
      * Update the specified resource in storage.

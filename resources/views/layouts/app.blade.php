@@ -10,17 +10,22 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ mix('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
+        @component('components.header')
+        @endcomponent
+
+        @component('components.flash')
+        @endcomponent
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -72,9 +77,14 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        <main>
+            <div class="container-fruid h-100 p-2 d-flex flex-column">
+                @yield('content')
+            </div>
         </main>
+        
+        @component('components.footer')
+        @endcomponent
     </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\ToDo;
+use App\Todo;
 use App\Goal;
 use App\Tag;
 use Illuminate\Http\Request;
@@ -17,15 +17,10 @@ class TodoController extends Controller
      */
     public function index(Request $request ,Goal $goal)
     {
-        $todos = $goal->todos()->with('tags')->orderBy('done','asc')->orderBy('position','asc')->get();
+        $todos = $goal->todos()->with('tags')->orderBy('done', 'asc')->orderBy('position', 'asc')->get();
         return response()->json($todos);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
 
 
     /**
@@ -43,25 +38,10 @@ class TodoController extends Controller
         $todo->position = request('position');
         $todo->done =false;
         $todo->save();
-        $todos = $goal->todos()->with('tags')->orderBy('done','asc')->orderBy('position','asc')->get();
+        $todos = $goal->todos()->with('tags')->orderBy('done', 'asc')->orderBy('position', 'asc')->get();
         return response()->json($todos);
 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\ToDo  $toDo
-     * @return \Illuminate\Http\Response
-     */
-
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\ToDo  $toDo
-     * @return \Illuminate\Http\Response
-     */
 
 
     /**
@@ -71,16 +51,16 @@ class TodoController extends Controller
      * @param  \App\ToDo  $toDo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,Goal $goal, ToDo $toDo)
+    public function update(Request $request,Goal $goal, Todo $todo)
     {
         $todo->content = request('content');
         $todo->user_id = Auth::id();
         $todo->goal_id = $goal->id;
-        $todo->position = request('possition');
+        $todo->position = request('position');
         $todo->done  = (bool) request('done');
         $todo->save();
 
-        $todos = $goal->todos()->with('tags')->orderBy('done','asc')->orderBy('position','asc')->get();
+        $todos = $goal->todos()->with('tags')->orderBy('done', 'asc')->orderBy('position', 'asc')->get();
         return response()->json($todos);
     }
 
@@ -90,10 +70,10 @@ class TodoController extends Controller
      * @param  \App\ToDo  $toDo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,Goal $goal, ToDo $toDo)
+    public function destroy(Request $request,Goal $goal, Todo $todo)
     {
        $todo->delete();
-       $todos = $goal->todos()->with('tags')->orderBy('done','asc')->orderBy('position','asc')->get();
+       $todos = $goal->todos()->with('tags')->orderBy('done', 'asc')->orderBy('position', 'asc')->get();
         return response()->json($todos);
     }
 
@@ -107,11 +87,11 @@ class TodoController extends Controller
             }else if (request('sortId')-1 == $lastTodo->position){
                 $todo->moveAfter($exchangeTodo);
             }else{
-                $todo->moveAfter($exchengeTodo);
+                $todo->moveAfter($exchangeTodo);
             }
 
 
-            $todos = $goal->todos()->with('tags')->orderBy('done','asc')->orderBy('position','asc')->get();
+            $todos = $goal->todos()->with('tags')->orderBy('done', 'asc')->orderBy('position', 'asc')->get();
             return response()->json($todos);
         }
 
@@ -132,4 +112,3 @@ class TodoController extends Controller
             return response()->json($todos);
         }
     }
-

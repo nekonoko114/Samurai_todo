@@ -189,11 +189,11 @@ export default {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
             axios.defaults.headers['content-type'] = 'application/json';
             axios.post(`/goals/${this.goalId}/todos/${todoId}/tags/${tagId}`, {_method: "delete"}).then((response) => {
-                this.todos = response.data;
+               this.todos = response.data;
             }, (error) => {
                 console.log(error)
             })
-            this.$forceUpdate();
+           this.$forceUpdate();
         },
         addNewTodo: function () {
             axios.defaults.headers['X-CSRF-TOKEN'] = $('meta[name=csrf-token]').attr('content');
@@ -261,7 +261,7 @@ export default {
             }, (error) => {
                 console.log(error)
             })
-        },
+        },        
     }
 }
 </script>

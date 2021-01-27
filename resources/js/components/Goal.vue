@@ -2,7 +2,7 @@
     <div class="container-fruid h-100 pt-5">
         <i class="fa fa-plus pl-3" data-toggle="modal" data-target="#goalModal"></i><span class="align-middle"> Create A New Goal</span>
 
-       <i class="fa fa-plus align-middle pl-4 pr-1" data-toggle="modal" data-target="#tagModal"></i><span class="align-middle">Manage Tag</span>
+        <i class="fa fa-plus align-middle pl-4 pr-1" data-toggle="modal" data-target="#tagModal"></i><span class="align-middle">Manage Tag</span>
 
         <div class="modal fade" id="goalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -43,7 +43,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" v-on:click="addNewTag">Add</button>
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
-
                     </div>
                 </div>
             </div>
@@ -51,8 +50,8 @@
 
         <div class="modal fade" id="editTagModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
-               <div class="modal-content">
-                     <div class="modal-header">
+                <div class="modal-content">
+                    <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Edit Tag Name</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#tagModal" v-on:click="tagTitle = ''; tagId = ''">
                                 <span aria-hidden="true">&times;</span>
@@ -64,7 +63,7 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal" v-on:click="editTagTitle(tagId)">Edit</button>
                         <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#tagModal" v-on:click="tagTitle = ''; tagId = ''">Save changes</button>
-                    </div>
+                   </div>
                 </div>
             </div>
         </div>
@@ -126,7 +125,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>    
 </template>
 
 <script>

@@ -30,7 +30,7 @@ class CreateTagsTable extends Migration
     {
         Schema::table('tags',function(Blueprint $table) {
             $table->dropColumn('title');
-            $table->dropColumm('user_id');
+            $table->dropColumn('user_id');
         });
     }
 }
